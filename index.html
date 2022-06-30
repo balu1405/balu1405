@@ -1,105 +1,257 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<title>SimpleBlog</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<link rel="stylesheet" href="images/SimpleBlog.css" type="text/css" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple HTML HomePage</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+    body {
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    /* CSS for header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f5f5f5;
+    }
+
+    .header .logo {
+      font-size: 25px;
+      font-family: 'Sriracha', cursive;
+      color: #000;
+      text-decoration: none;
+      margin-left: 30px;
+    }
+
+    .nav-items {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: #f5f5f5;
+      margin-right: 20px;
+    }
+
+    .nav-items a {
+      text-decoration: none;
+      color: #000;
+      padding: 35px 20px;
+    }
+
+    /* CSS for main element */
+    .intro {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 520px;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1031&q=80");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .intro h1 {
+      font-family: sans-serif;
+      font-size: 60px;
+      color: #fff;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .intro p {
+      font-size: 20px;
+      color: #d1d1d1;
+      text-transform: uppercase;
+      margin: 20px 0;
+    }
+
+    .intro button {
+      background-color: #5edaf0;
+      color: #000;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 5px;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4)
+    }
+
+    .achievements {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 40px 80px;
+    }
+
+    .achievements .work {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 40px;
+    }
+
+    .achievements .work i {
+      width: fit-content;
+      font-size: 50px;
+      color: #333333;
+      border-radius: 50%;
+      border: 2px solid #333333;
+      padding: 12px;
+    }
+
+    .achievements .work .work-heading {
+      font-size: 20px;
+      color: #333333;
+      text-transform: uppercase;
+      margin: 10px 0;
+    }
+
+    .achievements .work .work-text {
+      font-size: 15px;
+      color: #585858;
+      margin: 10px 0;
+    }
+
+    .about-me {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 80px;
+      border-top: 2px solid #eeeeee;
+    }
+
+    .about-me img {
+      width: 500px;
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .about-me-text h2 {
+      font-size: 30px;
+      color: #333333;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .about-me-text p {
+      font-size: 15px;
+      color: #585858;
+      margin: 10px 0;
+    }
+
+    /* CSS for footer */
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #302f49;
+      padding: 40px 80px;
+    }
+
+    .footer .copy {
+      color: #fff;
+    }
+
+    .bottom-links {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 40px 0;
+    }
+
+    .bottom-links .links {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 40px;
+    }
+
+    .bottom-links .links span {
+      font-size: 20px;
+      color: #fff;
+      text-transform: uppercase;
+      margin: 10px 0;
+    }
+
+    .bottom-links .links a {
+      text-decoration: none;
+      color: #a1a1a1;
+      padding: 10px 20px;
+    }
+  </style>
 </head>
+
 <body>
-<div id="wrap">
-  <div id="header">
-    <h1 id="logo">Simple<span class="gray">Blog</span></h1>
-    <h2 id="slogan">Put your site slogan here...</h2>
-    <div id="searchform">
-      <form method="post" class="search" action="http://all-free-download.com/free-website-templates/">
-        <p>
-          <input name="search_query" class="textbox" type="text" />
-          <input name="search" class="button" type="submit" value="search" />
-        </p>
-      </form>
+  <header class="header">
+    <a href="#" class="logo">Developer</a>
+    <nav class="nav-items">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <div class="intro">
+      <h1>A Web Developer</h1>
+      <p>I am a web developer and I love to create websites.</p>
+      <button>Learn More</button>
     </div>
-  </div>
-  <div id="menu">
-    <ul>
-      <li id="current"><a href="http://all-free-download.com/free-website-templates/"><span>Home</span></a></li>
-      <li><a href="http://all-free-download.com/free-website-templates/"><span>Archives</span></a></li>
-      <li><a href="http://all-free-download.com/free-website-templates/"><span>Downloads</span></a></li>
-      <li><a href="http://all-free-download.com/free-website-templates/"><span>Services</span></a></li>
-      <li><a href="http://all-free-download.com/free-website-templates/"><span>Support</span></a></li>
-      <li><a href="http://all-free-download.com/free-website-templates/"><span>About</span></a></li>
-    </ul>
-  </div>
-  <div id="content-wrap">
-    <div id="sidebar">
-      <h1>Sidebar Menu</h1>
-      <ul class="sidemenu">
-        <li><a href="http://all-free-download.com/free-website-templates/">Home</a></li>
-        <li><a href="#TemplateInfo">Template Info</a></li>
-        <li><a href="#SampleTags">Sample Tags</a></li>
-        <li><a href="http://all-free-download.com/free-website-templates/">More Free Templates</a></li>
-        <li><a href="http://all-free-download.com/free-website-templates/">Premium Templates</a></li>
-      </ul>
-      <h1>Site Partners</h1>
-      <ul class="sidemenu">
-        <li><a href="http://all-free-download.com/free-website-templates/">Dreamhost</a></li>
-        <li><a href="http://all-free-download.com/free-website-templates/">4templates</a></li>
-        <li><a href="http://all-free-download.com/free-website-templates/">TemplateMonster</a></li>
-        <li><a href="http://all-free-download.com/free-website-templates/">Fotolia.com</a></li>
-        <li><a href="http://all-free-download.com/free-website-templates/">Text Link Ads</a></li>
-      </ul>
-      <h1>Wise Words</h1>
-      <p>&quot;Be not afraid of life. Believe that life is worth living, and your belief will help create the fact.&quot; </p>
-      <p class="align-right">- William James</p>
-      <h1>Support Styleshout</h1>
-      <p>If you are interested in supporting my work and would like to contribute, you are welcome to make a small donation through the donate link on my website - it will be a great help and will surely be appreciated.</p>
+    <div class="achievements">
+      <div class="work">
+        <i class="fas fa-atom"></i>
+        <p class="work-heading">Projects</p>
+        <p class="work-text">I have worked on many projects and I am very proud of them. I am a very good developer and I am always looking for new projects.</p>
+      </div>
+      <div class="work">
+        <i class="fas fa-skiing"></i>
+        <p class="work-heading">Skills</p>
+        <p class="work-text">I have a lot of skills and I am very good at them. I am very good at programming and I am always looking for new skills.</p>
+      </div>
+      <div class="work">
+        <i class="fas fa-ethernet"></i>
+        <p class="work-heading">Network</p>
+        <p class="work-text">I have a lot of network skills and I am very good at them. I am very good at networking and I am always looking for new network skills.</p>
+      </div>
     </div>
-    <div id="main"> <a name="TemplateInfo"></a>
-      <h1>Template Info</h1>
-      <p><strong>SimpleBlog 1.0</strong> is a free, W3C-compliant, CSS-based website template by <strong>styleshout.com</strong>. This work is distributed under the <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by/2.5/"> Creative Commons Attribution 2.5 License</a>, which means that you are free to use and modify it for any purpose. All I ask is that you include a link back to my website in your credits.</p>
-      <p>For more free designs, you can visit my website to see my other works.</p>
-      <p>Good luck and I hope you find my free templates useful!</p>
-      <p class="post-footer align-right"> <a href="http://all-free-download.com/free-website-templates/" class="readmore">Read more</a> <a href="http://all-free-download.com/free-website-templates/" class="comments">Comments (7)</a> <span class="date">Oct 01, 2006</span> </p>
-      <a name="SampleTags"></a>
-      <h1>Sample Tags</h1>
-      <h3>Code</h3>
-      <p><code> code-sample { <br />
-        font-weight: bold;<br />
-        font-style: italic;<br />
-        } </code></p>
-      <h3>Example Lists</h3>
-      <ol>
-        <li>example of</li>
-        <li>ordered list</li>
-      </ol>
-      <ul>
-        <li>example of</li>
-        <li>unordered list</li>
-      </ul>
-      <h3>Blockquote</h3>
-      <blockquote>
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat....</p>
-      </blockquote>
-      <h3>Image and text</h3>
-      <p><a href="http://all-free-download.com/free-website-templates/"><img src="images/firefox-gray.jpg" width="100" height="120" alt="firefox" class="float-left" /></a> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum, dui pede condimentum odio, ac blandit ante orci ut diam. Cras fringilla magna. Phasellus suscipit, leo a pharetra condimentum, lorem tellus eleifend magna, eget fringilla velit magna id neque. Curabitur vel urna. In tristique orci porttitor ipsum. Aliquam ornare diam iaculis nibh. Proin luctus, velit pulvinar ullamcorper nonummy, mauris enim eleifend urna, congue egestas elit lectus eu est. </p>
-      <h3>Example Form</h3>
-      <form action="http://all-free-download.com/free-website-templates/">
-        <p>
-          <label>Name</label>
-          <input name="dname" value="Your Name" type="text" size="30" />
-          <label>Email</label>
-          <input name="demail" value="Your Email" type="text" size="30" />
-          <label>Your Comments</label>
-          <textarea rows="5" cols="5"></textarea>
-          <br />
-          <input class="button" type="submit" />
-        </p>
-      </form>
-      <br />
+    <div class="about-me">
+      <div class="about-me-text">
+        <h2>About Me</h2>
+        <p>I am a web developer and I love to create websites. I am a very good developer and I am always looking for new projects. I am a very good developer and I am always looking for new projects.</p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80" alt="me">
     </div>
-  </div>
-  <div id="footer">
-    <p> &copy; 2006 <strong>Your Company</strong> &nbsp;&nbsp; Design by: <a href="http://www.styleshout.com/">styleshout</a> | Valid: <a href="http://validator.w3.org/check/referer">XHTML</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://all-free-download.com/free-website-templates/">Home</a>&nbsp;|&nbsp; <a href="http://all-free-download.com/free-website-templates/">Sitemap</a>&nbsp;|&nbsp; <a href="http://all-free-download.com/free-website-templates/">Home</a> </p>
-  </div>
-</div>
-<div align=center>This template  downloaded form <a href='http://all-free-download.com/free-website-templates/'>free website templates</a></div></body>
+  </main>
+  <footer class="footer">
+    <div class="copy">&copy; 2022 Developer</div>
+    <div class="bottom-links">
+      <div class="links">
+        <span>More Info</span>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="links">
+        <span>Social Links</span>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+</body>
+
 </html>
